@@ -13,10 +13,13 @@ public class Shopper {
 		System.out.println ("You can also type B to see your balance, ");
 		System.out.println ( "or L to list the items you have purchased:");
 		LSMenu myMenu = new LSMenu("Choose one:");
-		myMenu.addItem("Apple");
-		myMenu.addItem("Nordstrom");
-		myMenu.addItem("Wegmans");
-		myMenu.displayAndChoose();
+		for(int i=0; i<3; i++) {
+			String addMe = NatickCollection.storeList[i].toString();
+			myMenu.addItem(addMe);
+		}
+		int choice = myMenu.displayAndChoose();
+		System.out.println(choice);
+		
 
 	}
 }
