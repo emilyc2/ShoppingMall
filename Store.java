@@ -1,25 +1,21 @@
 
-public class Store {
+public abstract class Store {
 	String storeName;
-	int numb;
-	public Store(String storeName, int numb) {
+	int payed;
+	String bought;
+	public Store(String storeName) {
 		this.storeName = storeName;
-		this.numb = numb;
-		
-	}
-	public int getNumb() {
-		return numb;
-	}
-
-	public void setNumb(int numb) {
-		this.numb = numb;
-	}
-	public void enterStore() {
-		for(int i = 0; i<3; i++) {
-			
-		}
 	}
 	
+	
+	@Override 
+	public String toString(){
+		return storeName;
+	}
+
+	public void script(Shopper theShopper) {
+		
+	}
 	
 
 }

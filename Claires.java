@@ -1,23 +1,22 @@
 import ls.java.menu.LSMenu;
 
-public class Wegman extends Store{
+public class Claires extends Store{
 	int payed;
 	String bought;
 	boolean shopping;
 	static int choice;
 	String[][] itemList;
-	public Wegman() {
-		super("Wegman");
+	public Claires() {
+		super("Claires");
 	}
 	public void script(Shopper theShopper) {
-		System.out.println("YOU MADE IT TO WEGMANS. WAY TO GO MAN!!");
+		System.out.println("WELCOME TO CLAIRES! EVERY 12 YEAR OLDS FAVORITE STORE");
 		shopping = true;
 		while(shopping == true){
-			Item bananas = new Item("bananas", 1, "Wegmans");
-			Item cereal = new Item("cereal", 500, "Wegmans");
-			Item bag = new Item("bag", 5, "Wegmans");
-			Item salad = new Item("salad", 20, "Wegmans");
-			Item[] itemList = {bananas, cereal, bag, salad};
+			Item diamond = new Item("Fake Diamond", 100, "Claires");
+			Item flowers = new Item("Flowers", 75, "Claires");
+			Item pearls = new Item("Fake {Pearls", 80, "Claires");
+			Item[] itemList = {diamond, flowers, pearls};
 			LSMenu myMenu = new LSMenu("Choose one:");
 			for(int i=0; i<itemList.length; i++) {
 				String addMe = itemList[i].name;
@@ -48,18 +47,6 @@ public class Wegman extends Store{
 					theShopper.balance = theShopper.balance - itemList[choice - 1].value;
 					System.out.println("my balance is "+theShopper.balance);
 					theShopper.purchaseList.add(itemList[choice-1]);
-				}else {
-					System.out.println("Do you want to steal the item???");
-					LSMenu stealMenu = new LSMenu("Choose one:");
-					stealMenu.addItem("Yes");
-					stealMenu.addItem("No");
-					int yesNo = stealMenu.displayAndChoose();
-					if(yesNo == 1) {
-						System.out.println("you stole a "+itemList[choice - 1].name);
-						theShopper.purchaseList.add(itemList[choice-1]);
-					}else {
-						System.out.println("thank you for being a good person");
-					}
 				}
 			}
 		}

@@ -1,23 +1,29 @@
+
 import ls.java.menu.LSMenu;
 
-public class Apple extends Store{
+public class AmericanGirl extends Store{
 	int payed;
 	String bought;
 	int choice;
 	boolean shopping;
 	String[][] itemList;
-	public Apple() {
-		super("Apple");
+	public AmericanGirl() {
+		super("AmericanGirl");
 	}
 	public void script(Shopper theShopper) {
-		System.out.println("YOU MADE IT TO APPLE! WANT A PEAR?");
+		System.out.println("YOU MADE IT TO AMERICAN GIRL DOLLS! YOUR CHILD IS ABOUT TO BE BORN");
 		shopping = true;
 		while(shopping == true){
-			Item iPod = new Item("iPod", 425, "Apple");
-			Item iPhone = new Item("iPhone", 800,"Apple");
-			Item iPad = new Item("iPad", 500,"Apple");
-			Item macBook = new Item("macbook", 1100,"Apple");
-			Item[] itemList = {iPod, iPhone, iPad, macBook};
+			Item julie = new Item("Julie", 115, "AmericanGirl");
+			Item kit = new Item("Kit", 115, "AmericanGirl");
+			Item rebecca = new Item("Rebecca", 115, "AmericanGirl");
+			Item felicity = new Item("Felicity", 115, "AmericanGirl");
+			Item kaya = new Item("Kaya", 115, "AmericanGirl");
+			Item josefina = new Item("Josefina", 115, "AmericanGirl");
+			Item addy = new Item("Addy", 115, "AmericanGirl");
+			Item samantha = new Item("Samantha", 115, "AmericanGirl");
+
+			Item[] itemList = {julie, kit, rebecca, felicity, kaya, josefina, addy, samantha};
 			LSMenu myMenu = new LSMenu("Choose one:");
 			for(int i=0; i<itemList.length; i++) {
 				String addMe = itemList[i].name;
@@ -81,8 +87,8 @@ public class Apple extends Store{
 					stealMenu.addItem("No");
 					int yesNo = stealMenu.displayAndChoose();
 					if(yesNo == 1) {
-						System.out.println("you stole a "+itemList[choice - 1].name);
-						theShopper.purchaseList.add(itemList[choice-1]);
+						System.out.println("you stole a doll from a cute little child. You are a horrible person and are going to mall jail");
+						break;
 					}else {
 						System.out.println("thank you for being a good person");
 					}

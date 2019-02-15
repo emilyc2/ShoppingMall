@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 
-public class Mall {
+public abstract class Mall {
 	String mallName;
 	public Mall(String mallName) {
 		this.mallName = mallName;
-		// TODO Auto-generated constructor stub
+		
 	}
-
+	public ArrayList<Store> makeStores() {
+		return null;
+	}
 }
